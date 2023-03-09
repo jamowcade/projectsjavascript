@@ -66,7 +66,7 @@ loadQuiz();
 
 function loadQuiz(){
     
-    console.log(randamQuiz)
+    
     enablebtn()
     deselectAnswer();
     
@@ -116,9 +116,12 @@ quizbtn.addEventListener('click', ()=>{
     if(answer){
         if(answer === quizData[curentQuiz].correct){
             score++;
+           
         }
-
+        
+       
         curentQuiz++;
+      
         
         if(curentQuiz <  quizData.length){
         // disable button
@@ -126,6 +129,7 @@ quizbtn.addEventListener('click', ()=>{
         loadQuiz();
     }
     else{
+        // show results
         if(score < quizData.length/2){
         quiz.innerHTML = `<h2>OOPS! you failed: you scored ${score}/${quizData.length}</h2>
         <button onClick=location.reload()>Try Again</button>
@@ -137,7 +141,7 @@ quizbtn.addEventListener('click', ()=>{
             <button onClick=location.reload()>Play Again</button>
         `
         }
-        // TODO: show results
+       
         
 
     }
